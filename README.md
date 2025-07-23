@@ -77,17 +77,7 @@ A Machine Learning web application that predicts whether an employee earns **mor
 4. (Optional) To make it publicly accessible:
    ```bash
    pyngrok http 8501
-   ```
-
----
-
-## 📸 Screenshot
-
-![App Screenshot](post preprocess.png)
-![App Screenshot](post preprocess.png)
-
----
-
+```
 ## 📂 Folder Structure
 
 ```
