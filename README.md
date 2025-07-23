@@ -83,7 +83,8 @@ A Machine Learning web application that predicts whether an employee earns **mor
 
 ## 📸 Screenshot
 
-![App Screenshot](screenshots/streamlit_ui.png)
+![App Screenshot](post preprocess.png)
+![App Screenshot](post preprocess.png)
 
 ---
 
