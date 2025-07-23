@@ -114,4 +114,4 @@ employee-salary-prediction/
 ## 👨‍💻 Author
 
 Mahesh Jorige  
-[LinkedIn](https://linkedin.com) | [GitHub](https://github.com)
+[LinkedIn](https://www.linkedin.com/in/maheshjorige/) | [GitHub](https://github.com)
