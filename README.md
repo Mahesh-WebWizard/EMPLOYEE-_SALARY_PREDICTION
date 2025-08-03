@@ -1,108 +1,171 @@
+# EMPLOYEE_SALARY_PREDICTION_USING_KNN
 
-# 💼 Employee Salary Prediction App
-
-A Machine Learning web application that predicts whether an employee earns **more than 50k** or **less than or equal to 50k** per year based on input features such as age, education, occupation, hours worked per week, and years of experience.
-
----
-
-## 🚀 Features
-
-- Predict salary class (>50k or <=50k) for a single employee using input form.
-- Batch prediction by uploading a CSV file.
-- Clean and responsive UI using **Streamlit**.
-- Best model saved and used for inference (`best_model.pkl`).
+A beginner-friendly machine learning project that predicts whether an employee’s salary is **greater than 50K** or **less than or equal to 50K** using the **K-Nearest Neighbors (KNN)** algorithm. This project uses Python, Streamlit for UI, and a CSV file containing employee data.
 
 ---
 
-## 🛠️ Tech Stack
+## 📌 What is This Project?
 
-- **Frontend/UI**: Streamlit  
-- **Backend/Modeling**: Python, Scikit-learn, Pandas, NumPy  
-- **Deployment (Local)**: Pyngrok for secure tunnel (optional)  
-- **Model Serialization**: Joblib
+This project:
 
----
-
-## 📁 Dataset
-
-- **Source**: UCI Adult Income Dataset  
-- **Columns Used**:  
-  - `age`  
-  - `education`  
-  - `occupation`  
-  - `hours-per-week`  
-  - `experience`  
-  - `salary` (Target)
+- Reads employee data from a `.csv` file (like age, education, hours per week, etc.)
+- Trains a machine learning model using **KNN (K-Nearest Neighbors)** algorithm
+- Predicts the salary class of a new employee based on similar data
+- Shows the result on a **user-friendly web app** built using **Streamlit**
 
 ---
 
-## 🔁 Project Workflow
+## 💡 Why Did We Build This?
 
-1. **Data Preprocessing**  
-   - Clean missing values (`?`)  
-   - Remove irrelevant features  
-   - Encode categorical variables  
-   - Scale numerical values  
-
-2. **Model Building**  
-   - Algorithms tried: Logistic Regression, Random Forest, KNN, SVM, Gradient Boosting  
-   - Selected best based on accuracy  
-   - Saved using `joblib`
-
-3. **Web App Development**  
-   - Built with Streamlit  
-   - Sliders and dropdowns for easy input  
-   - CSV upload for batch processing  
+- To learn how data is used to make predictions
+- To understand how machine learning works using a real-world example
+- To show how CSV data, ML models, and web apps work together
 
 ---
 
-## 🧪 How to Run
+## 🧠 What is KNN?
 
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/your-username/employee-salary-prediction.git
-   cd employee-salary-prediction
-   ```
+KNN (K-Nearest Neighbors) is a **machine learning algorithm** that:
 
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+- Finds the "K" most similar data points in the dataset
+- Predicts the value (like salary class) based on those neighbors
 
-3. Run the app:
-   ```bash
-   streamlit run app.py
-   ```
+It's simple, intuitive, and often a first algorithm beginners learn.
 
-4. (Optional) To make it publicly accessible:
-   ```bash
-   pyngrok http 8501
-```
-## 📂 Folder Structure
+---
+
+## 🧰 Technologies Used
+
+| Tool/Library   | Purpose                                  |
+|----------------|------------------------------------------|
+| Python         | Programming Language                     |
+| pandas         | Data handling and CSV reading            |
+| scikit-learn   | ML algorithm and model building          |
+| Streamlit      | Web interface for user input/output      |
+| joblib         | Save and load trained models easily      |
+
+---
+
+## 🗂️ Folder Structure
 
 ```
-employee-salary-prediction/
-├── app.py
-├── best_model.pkl
-├── data/
-│   └── adult.csv
-├── utils/
-│   └── preprocess.py
-├── requirements.txt
-└── README.md
+EMP_SAL_PRE_USING_KNN/
+│
+├── emp_using_knn/
+│   ├── adult.csv           # Employee dataset
+│   ├── knn_model.py        # Code to train the model
+│   ├── app.py              # Streamlit app to make predictions
+│   └── knn_model.pkl       # Saved trained model (created after training)
+│
+├── README.md               # Project documentation (this file)
 ```
 
 ---
 
-## 📌 Future Improvements
+## 📝 Dataset Info - `adult.csv`
 
-- Add cloud deployment (e.g., Streamlit Cloud, Heroku)
-- Add login/auth for secure access
-- Model explainability using SHAP
+This file contains employee details like:
+
+- Age
+- Workclass
+- Education
+- Occupation
+- Hours per week
+- Salary class (target: `>50K` or `<=50K`)
 
 ---
 
-## 👨‍💻 Author
+## ⚙️ How to Run This Project
 
-Mahesh Jorige  
+### ✅ OPTION 1: Manual Setup (No Git)
+
+1. Go to this GitHub page.
+2. Click on **Code** → **Download ZIP**
+3. Extract the ZIP file.
+4. Open the extracted folder.
+5. Inside the `emp_using_knn` folder, follow these steps:
+
+```bash
+pip install pandas scikit-learn streamlit joblib
+```
+
+6. Run the model training file (to generate the model):
+
+```bash
+python knn_model.py
+```
+
+7. Run the web app:
+
+```bash
+streamlit run app.py
+```
+
+8. It will open the app in your browser where you can enter employee info and see salary prediction.
+
+---
+
+### ✅ OPTION 2: Using Git (Command Line)
+
+1. Open your terminal or command prompt
+2. Run:
+
+```bash
+git clone https://github.com/Mahesh-Jorige/EMP_SAL_PRE_USING_KNN.git
+cd EMP_SAL_PRE_USING_KNN/emp_using_knn
+```
+
+3. Install required libraries:
+
+```bash
+pip install pandas scikit-learn streamlit joblib
+```
+
+4. Train the model:
+
+```bash
+python knn_model.py
+```
+
+5. Launch the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+6. App will launch in your browser.
+
+---
+
+## 🖥️ How Does the App Work?
+
+1. You enter inputs like age, workclass, education, etc.
+2. The app feeds this data to the KNN model
+3. The model predicts salary class:
+   - **>50K** → Higher salary
+   - **<=50K** → Lower salary
+
+---
+
+## 🔍 Future Improvements
+
+- Use different algorithms like Decision Tree, Random Forest
+- Add graphs/visualizations
+- Add accuracy report and confusion matrix
+
+---
+
+## 🙋‍♂️ Who Can Use This?
+
+- Beginners learning machine learning
+- Students building academic projects
+- Anyone curious about data prediction
+
+---
+
+## 🙌 Connect with Me
+
+📇 **Mahesh Jorige**    
+Let’s connect, collaborate, or talk tech!
+
 [LinkedIn](https://www.linkedin.com/in/maheshjorige/) | [GitHub](https://github.com/Mahesh-WebWizard)
